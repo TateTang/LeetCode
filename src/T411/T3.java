@@ -48,14 +48,11 @@ public class T3 {
 	// }
 
 	/**
-	 * 充分利用条件“给定的 k 保证是有效的”。
-     * 递归，访问到最后的节点，再往前找之前的状态。
-     * 双指针，k既是倒数的节点，也是该节点与最末尾节点的距离。
+	 * 充分利用条件“给定的 k 保证是有效的”。 递归，访问到最后的节点，再往前找之前的状态。 双指针，k既是倒数的节点，也是该节点与最末尾节点的距离。
 	 */
 	private static int kthToLast(ListNode head, int k) {
 		ListNode p = head;
-		for (int i = 0
-                ; i < k; i++) {
+		for (int i = 0; i < k; i++) {
 			p = p.next;
 		}
 		while (p != null) {

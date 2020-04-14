@@ -1,5 +1,7 @@
 package T413;
 
+import java.util.Arrays;
+
 /**
  * @Author tangmf
  * @Date 2020/4/13 18:06
@@ -16,12 +18,15 @@ package T413;
 public class T3 {
 
 	public static void main(String[] args) {
-		int n = 3;
-		System.out.println(printNumbers(n));
+		int n = 1;
+		System.out.println(Arrays.toString(printNumbers(n)));
 	}
 
-	public static int[] printNumbers(int n) {
-		int[] arr = { 1 };
+	private static int[] printNumbers(int n) {
+		int[] arr = new int[(int) Math.pow(10, n) - 1];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = i + 1;
+		}
 		return arr;
 	}
 }
