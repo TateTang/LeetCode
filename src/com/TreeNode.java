@@ -13,11 +13,12 @@ public class TreeNode {
 	public TreeNode(int x) {
 		val = x;
 	}
-    public static void inOrderTraverse(TreeNode node) {
-        if (node == null)
-            return;
-        inOrderTraverse(node.left);
-        System.out.print(node.val);
-        inOrderTraverse(node.right);
-    }
+
+	public static void inOrderTraverse(TreeNode node) {
+		if (node == null)
+			return;
+		inOrderTraverse(node.left);
+		System.out.print(node.val + " ");
+		inOrderTraverse(node.right);
+	}
 }
