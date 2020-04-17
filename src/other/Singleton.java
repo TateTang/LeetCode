@@ -1,3 +1,5 @@
+package other;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,10 +10,10 @@ import java.util.regex.Pattern;
  */
 public class Singleton {
 	/*
-	 * private static Singleton instatnce = new Singleton(); private
-	 * Singleton(){
+	 * private static other.Singleton instatnce = new other.Singleton(); private
+	 * other.Singleton(){
 	 *
-	 * } public static Singleton getInstance(){ return instatnce; }
+	 * } public static other.Singleton getInstance(){ return instatnce; }
 	 */
 	// 饿汉模式
 

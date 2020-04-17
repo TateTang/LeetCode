@@ -1,4 +1,5 @@
-import com.sun.org.apache.bcel.internal.generic.NEW;
+package other;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
