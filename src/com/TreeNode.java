@@ -14,6 +14,16 @@ public class TreeNode {
 		val = x;
 	}
 
+	// 前序遍历输出
+	public static void preOrderTraverse(TreeNode node) {
+		if (node == null)
+			return;
+		System.out.print(node.val + " ");
+		preOrderTraverse(node.left);
+		preOrderTraverse(node.right);
+	}
+
+	// 中序遍历输出
 	public static void inOrderTraverse(TreeNode node) {
 		if (node == null)
 			return;
@@ -21,4 +31,14 @@ public class TreeNode {
 		System.out.print(node.val + " ");
 		inOrderTraverse(node.right);
 	}
+
+	// 后序遍历输出
+	public static void postOrderTraverse(TreeNode node) {
+		if (node == null)
+			return;
+        postOrderTraverse(node.left);
+        postOrderTraverse(node.right);
+		System.out.print(node.val + " ");
+	}
+
 }
