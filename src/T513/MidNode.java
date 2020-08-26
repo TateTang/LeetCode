@@ -32,6 +32,7 @@ public class MidNode {
 		l2.next = l3;
 		l3.next = l4;
 		ListNode.sout(listNode);
+		ListNode.sout(middleNode(listNode));
 		ListNode.sout(middleNode1(listNode));
 	}
 
