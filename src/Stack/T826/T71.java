@@ -1,4 +1,4 @@
-package T826Stack;
+package Stack.T826;
 
 import java.util.Stack;
 
