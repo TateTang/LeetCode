@@ -51,8 +51,8 @@ public class T144 {
         TreeNode curr = root;
         while (curr != null || !stack.isEmpty()) {
             while (curr != null) {
-                list.add(curr.val);//当前节点不为空，说明是根节点，直接进行入栈即可
                 stack.push(curr);//当前节点保存到栈中
+                list.add(curr.val);//当前节点不为空，说明是根节点，直接进行入栈即可
                 curr = curr.left;//遍历左边
             }
             //节点为空，左边走到了，转向右边节点
