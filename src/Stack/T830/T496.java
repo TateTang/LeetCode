@@ -1,5 +1,7 @@
 package Stack.T830;
 
+import java.util.Arrays;
+
 /**
  * @Author tangmf
  * @Date 2020/8/30 10:21 下午
@@ -26,7 +28,7 @@ public class T496 {
     public static void main(String[] args) {
         int[] nums1 = {2, 4};
         int[] nums2 = {1, 2, 3, 4};
-        System.out.println();
+        System.out.println(Arrays.toString(nextGreaterElement(nums1, nums2)));
     }
 
     public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
