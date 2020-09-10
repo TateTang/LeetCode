@@ -1,9 +1,6 @@
 package Stack.T909;
 
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.Stack;
 
 /**
@@ -46,7 +43,7 @@ import java.util.Stack;
  * <p>
  */
 public class T682 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String[] ops = {"5", "2", "C", "D", "+"};
         System.out.println(calPoints(ops));
     }
@@ -73,7 +70,7 @@ public class T682 {
                     break;
                 default:
                     //直接表示您在本轮中获得的积分数
-                    sum +=stack.push(Integer.parseInt(op));
+                    sum += stack.push(Integer.parseInt(op));
                     break;
             }
         }
