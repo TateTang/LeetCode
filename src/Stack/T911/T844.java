@@ -1,4 +1,4 @@
-package Stack.T0911;
+package Stack.T911;
 
 import java.util.Stack;
 
@@ -31,17 +31,57 @@ import java.util.Stack;
  */
 public class T844 {
     public static void main(String[] args) {
-        String S = "a#c";
-        String T = "b";
+        String S = "a##c";
+        String T = "#a#c";
         System.out.println(backspaceCompare(S, T));
     }
 
     public static boolean backspaceCompare(String S, String T) {
-        return build(S).equals(build(T));
+//        return build(S).equals(build(T));
         //双指针方法
         /*
-        思路：一个字符是否属于最终字符串的一部分
+        思路：一个字符是否属于最终字符串的一部分，取决于它后面有多少个退格符
+        如果反向遍历字符串，就可以知道有多少个退格符，左边有多少个字符会被删除，对应的也就知道那些字符最终保留在最终的字符串中
+        算法：
+        反向遍历字符串，如果遍历到一个退格符，那么往左第一个非退格字符就会被删除，剩余未被删除的字符串就是最终的字符串
          */
+        int i = S.length() - 1, j = T.length() - 1;
+        int skipS = 0, skipT = 0;
+        while (i >= 0 || j >= 0) {//当 S T 中有字符的时候
+            while (i >= 0) {//查找S中下一个可能的char的位置
+                if (S.charAt(i) == '#') {
+                    skipS++;
+                    i--;
+                } else if (skipS > 0) {
+                    skipS--;
+                    i--;
+                } else {
+                    break;
+                }
+            }
+            while (j >= 0) {//查找T中下一个可能的char的位置
+                if (T.charAt(j) == '#') {
+                    skipT++;
+                    j--;
+                } else if (skipT > 0) {
+                    skipT--;
+                    j--;
+                } else {
+                    break;
+                }
+            }
+            //如果两个实际字符不同
+            if (i >= 0 && j >= 0 && S.charAt(i) != T.charAt(j)) {
+                return false;
+            }
+            //如果期望比较char与什么都没有
+            if ((i >= 0) != (j >= 0)) {
+                return false;
+            }
+            i--;
+            j--;
+        }
+        return true;
     }
 
     /**
