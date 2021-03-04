@@ -22,7 +22,7 @@ import com.TreeNode;
  * 1、计算某节点的左子的左屋檐 ，右子的左屋檐
  * 2、左边 == 右边，说明左边是完全的，直接公式
  * 3、左边 > 右边，说明右边是完全的，直接公式
- *
+ * <p>
  * 满二叉树总结点数：2^n -1
  */
 public class Test222 {
@@ -33,9 +33,9 @@ public class Test222 {
         TreeNode rightNode = new TreeNode(3);
         root.left = leftNode;
         root.right = rightNode;
-        leftNode.left=new TreeNode(4);
-        leftNode.right=new TreeNode(5);
-        rightNode.left=new TreeNode(6);
+        leftNode.left = new TreeNode(4);
+        leftNode.right = new TreeNode(5);
+        rightNode.left = new TreeNode(6);
         System.out.println(countNodes(root));
     }
 
@@ -68,5 +68,15 @@ public class Test222 {
             root = root.left;
         }
         return height;
+    }
+
+    /**
+     * 递归 暴力解法
+     */
+    public int countNodes1(TreeNode treeNode) {
+        if (treeNode == null) {
+            return 0;
+        }
+        return 1 + countNodes(treeNode.left) + countNodes(treeNode.right);
     }
 }
