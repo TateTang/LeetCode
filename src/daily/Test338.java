@@ -21,6 +21,7 @@ public class Test338 {
         System.out.println(Arrays.toString(countBits1(num)));
         System.out.println(Arrays.toString(countBits2(num)));
         System.out.println(Arrays.toString(countBits3(num)));
+        System.out.println(Arrays.toString(countBits4(num)));
 
     }
 
@@ -29,7 +30,7 @@ public class Test338 {
      */
     public static int[] countBits1(int num) {
         int[] arrs = new int[num + 1];
-        for (int i = 0; i <= num; i++) {
+        for (int i = 1; i <= num; i++) {
             arrs[i] = Integer.bitCount(i);
         }
         return arrs;
@@ -41,7 +42,7 @@ public class Test338 {
      */
     public static int[] countBits2(int num) {
         int[] arrs = new int[num + 1];
-        for (int i = 0; i <= num; i++) {
+        for (int i = 1; i <= num; i++) {
             arrs[i] = binCount(i);
         }
         return arrs;
@@ -68,11 +69,22 @@ public class Test338 {
      */
     public static int[] countBits3(int num) {
         int[] arrs = new int[num + 1];
-        for (int i = 0; i <= num; i++) {
+        for (int i = 1; i <= num; i++) {
             arrs[i] = arrs[i >> 1] + (i & 1);
             //i>>1 右移一位等价于 i/2
             //i & 1 =0 i为奇数，i & 1 = 1 i为偶数。也可以计算二进制的个位数是1 还是0
             //i & 1 按位与 11 1 只要有0 就是0
+        }
+        return arrs;
+    }
+
+    /*
+    方法3：从已经得到的结果中寻找解以减少计算，使用
+     */
+    public static int[] countBits4(int num) {
+        int[] arrs = new int[num + 1];
+        for (int i = 1; i <= num; i++) {
+            arrs[i] = arrs[i & (i - 1)] + 1;
         }
         return arrs;
     }
