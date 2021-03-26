@@ -6,21 +6,29 @@ package com;
  * @Description
  */
 public class ListNode {
-	public int val;
-	public ListNode next;
+    public int val;
+    public ListNode next;
 
-	public ListNode(int x) {
-		val = x;
-	}
+    public ListNode() {
+    }
 
-	public static void sout(ListNode listNode) {
-		while (listNode != null) {
-			if (listNode.next == null) {
-				System.out.println(listNode.val);
-			} else {
-				System.out.print(listNode.val + " --> ");
-			}
-			listNode = listNode.next;
-		}
-	}
+    public ListNode(int val) {
+        this.val = val;
+    }
+
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
+    public static void sout(ListNode listNode) {
+        while (listNode != null) {
+            if (listNode.next == null) {
+                System.out.println(listNode.val);
+            } else {
+                System.out.print(listNode.val + " --> ");
+            }
+            listNode = listNode.next;
+        }
+    }
 }
