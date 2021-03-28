@@ -85,7 +85,7 @@ public class ListNodeOperation {
 		System.out.println(getLenOfLNode(listNode));
 		System.out.println("=====================");
 		System.out.println("删除l2节点：");
-		// removeNode(listNode, l2);
+		 removeNode(listNode, l2);
 		showListNode(listNode);
 		System.out.println("=====================");
 		System.out.println("插入l2节点");
