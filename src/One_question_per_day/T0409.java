@@ -28,10 +28,14 @@ public class T0409 {
         /*
         官方解法：
         1、区间[0:mid-1]递增的，区间[mid:N-1]也是递增的
-        2、最小值右侧的元素都严格小于x，最小值左侧的元素都严格大于x
+        2、最小值右侧的元素都严格小于等于x，最小值左侧的元素都严格大于等于x，通过二分法找出最小值
         2、定义左边界left，右边界right，中间点mid，
-            - nums[mid]<nums[right]，说明nums[mid]在最小值的右边，然后找左边
-            - nums[mid]>nums[right]，说明nums[mid]在最小值的左边，然后找右边
+            - nums[mid]<nums[right]，说明nums[mid]在最小值的右边，忽略mid的右边，然后找左边（忽略二分查找右半部分）
+            - nums[mid]>nums[right]，说明nums[mid]在最小值的左边，忽略mid的左边，然后找右边（忽略二分查找左半部分）
+            - nums[mid] ==nums[right]，由于重复元素的存在，不能够确定其nums[mid]在最小值的
+            左边还是右边。唯一可以知道的是，由于它们的值相同，无论nums[right]是不是最小值，
+            都有一个替代品nums[mid]，因此可以忽略也就是nums[mid]=nums[right]的时候
+            可以忽略二分查找右端点
         3、区间长度为1 结束查找 区间就是left = right-1 也就是left <right而不是left<=right
         4、规律的说法
         当 while (left < right) 时，对应的更新式是 left = middle + 1 ， right = middle
@@ -46,8 +50,11 @@ public class T0409 {
             if (nums[mid] < nums[right]) {
                 //nums[mid]在最小值的右边，找左边
                 right = mid;
-            } else {
+            } else if (nums[mid] > nums[right]) {
+                //nums[mid]在最小值的左边，忽略mid的左边，然后找右边
                 left = mid + 1;
+            } else {
+                right -= 1;
             }
         }
         return nums[left];
