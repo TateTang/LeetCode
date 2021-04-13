@@ -37,8 +37,10 @@ public class T1 {
 
 	private static int rangeSumBST(TreeNode root, int L, int R) {
 		/*
-		 * 深度优先搜索 我们对树进行深度优先搜索，对于当前节点 node，如果 node.val 小于等于 L，那么只需要继续搜索它的右子树； 如果
-		 * node.val 大于等于 R，那么只需要继续搜索它的左子树；如果 node.val 在区间 (L, R) 中，则需要搜索它的所有子树。
+		 * 深度优先搜索 我们对树进行深度优先搜索，对于当前节点 node，
+		 * 1、如果 node.val 小于等于 L，那么只需要继续搜索它的右子树；
+		 * 2、如果 node.val 大于等于 R，那么只需要继续搜索它的左子树；
+		 * 3、如果 node.val 在区间 (L, R) 中，则需要搜索它的所有子树。
 		 */
 		// int sum = 0;
 		if (root == null) {
