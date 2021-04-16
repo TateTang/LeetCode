@@ -1,4 +1,4 @@
-package One_question_per_day;
+package daily;
 
 import com.ListNode;
 import java.util.Stack;

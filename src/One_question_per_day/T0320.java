@@ -44,7 +44,7 @@ import java.util.Stack;
  * 去掉括号后表达式无歧义，上式即便写成 1 2 + 3 4 + * 也可以依据次序计算出正确结果。
  * 适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中。
  */
-public class T320 {
+public class T0320 {
     public static void main(String[] args) {
         String[] tokens = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
         System.out.println(evalRPN(tokens));
