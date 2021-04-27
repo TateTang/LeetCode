@@ -24,7 +24,11 @@ public class TreeNode {
         this.right = right;
     }
 
-    // 前序遍历输出
+    /**
+     * 前序遍历输出
+     *
+     * @param node treeNode
+     */
     public static void preOrderTraverse(TreeNode node) {
         if (node == null)
             return;
@@ -33,7 +37,11 @@ public class TreeNode {
         preOrderTraverse(node.right);
     }
 
-    // 中序遍历输出
+    /**
+     * 中序遍历输出
+     *
+     * @param node treeNode
+     */
     public static void inOrderTraverse(TreeNode node) {
         if (node == null)
             return;
@@ -42,7 +50,11 @@ public class TreeNode {
         inOrderTraverse(node.right);
     }
 
-    // 后序遍历输出
+    /**
+     * 后序遍历输出
+     *
+     * @param node treeNode
+     */
     public static void postOrderTraverse(TreeNode node) {
         if (node == null)
             return;
