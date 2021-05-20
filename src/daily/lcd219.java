@@ -29,7 +29,7 @@ public class lcd219 {
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
         /*
             哈希表
-            1、遍历数组
+            1、遍历数组ÎÎ
              - 哈希表中搜索当前元素，找到了返回 true
              - 哈希表中插入当前元素
              - 当前哈希表的大小超过k，删除哈希表中最旧的元素
