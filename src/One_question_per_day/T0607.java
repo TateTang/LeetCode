@@ -149,12 +149,12 @@ public class T0607 {
         if (diff < 0 || diff % 2 != 0) {
             return 0;//必须要是非负偶数
         }
-        int n = nums.length, neg = diff / 2;
+        int neg = diff / 2;
         int[] dp = new int[neg + 1];
         dp[0] = 1;//初始化
         for (int num : nums) {
-            for (int i = neg; i >= num; i--) {
-                dp[i] += dp[i - num];
+            for (int j = neg; j >= num; j--) {
+                dp[j] += dp[j - num];
             }
         }
         return dp[neg];
