@@ -10,10 +10,10 @@ package offer;
  * 斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。
  * 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
  */
-public class Offer10 {
+public class Offer10I {
     public static void main(String[] args) {
         int n = 44;
-        System.out.println(new Offer10().fib1(n));
+        System.out.println(new Offer10I().fib1(n));
     }
 
     /**
