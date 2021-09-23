@@ -25,7 +25,7 @@ public class Offer40 {
 
     public int[] getLeastNumbers(int[] arr, int k) {
         Arrays.sort(arr); //直接进行排序
-        int[] res = new int[k];
+        int[] res = new int[k]; 
         System.arraycopy(arr, 0, res, 0, res.length);//筛选前k个数字即可
         return res;
     }
