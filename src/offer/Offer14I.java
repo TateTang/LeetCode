@@ -16,10 +16,10 @@ package offer;
  * 输出: 36
  * 解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36
  */
-public class Offer14 {
+public class Offer14I {
     public static void main(String[] args) {
-        int n = 10;
-        System.out.println(new Offer14().cuttingRope2(n));
+        int n = 4;
+        System.out.println(new Offer14I().cuttingRope3(n));
     }
 
     public int cuttingRope(int n) {
@@ -78,5 +78,25 @@ public class Offer14 {
             return (int) Math.pow(3, a - 1) * 4;
         }
         return (int) Math.pow(3, a) * 2;//b==2时，3k+2 如8 拆分成332 就是3的次方*2
+    }
+
+    public int cuttingRope3(int n) {
+        /*
+          数学规律：贪心，尽量切长度为3的
+          步骤如下：
+          -  如果 n == 2，返回1，如果 n == 3，返回2，两个可以合并成n小于4的时候返回n - 1
+          -  如果 n == 4，返回4
+          -  如果 n > 4，分成尽可能多的长度为3的小段，每次循环长度n减去3，乘积res乘以3；最后返回时乘以小于等于4的最后一小段
+          -  以上2和3可以合并
+         */
+        if (n < 4) {
+            return n - 1;
+        }
+        int res = 1;
+        while (n > 4) {
+            res *= 3;
+            n -= 3;
+        }
+        return res * n;
     }
 }
