@@ -8,7 +8,7 @@ import java.util.Stack;
  * @Author tangmf
  * @Date 2021/3/16 3:54 下午
  * @Description Depth First Search
- * 广度优先搜索
+ * 深度优先搜索
  */
 public class DFS {
     public static void main(String[] args) {
