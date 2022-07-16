@@ -1,5 +1,7 @@
 package offer;
 
+import java.net.URLDecoder;
+
 /**
  * @Author tangmf
  * @Date 2021/7/29 5:12 下午
@@ -29,7 +31,7 @@ public class Offer04 {
                 {18, 21, 23, 26, 30}};
         //int[][] matrix = {{1},{1}};
         int target = 5;
-        System.out.println(new Offer04().findNumberIn2DArray1(matrix, target));
+        System.out.println(new Offer04().findNumberIn2DArray(matrix, target));
     }
 
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
@@ -37,6 +39,10 @@ public class Offer04 {
         1、直接一次二分查找
 
          */
+        String callbackUrl = "https://wxis.91160.com/wxis/act/zhenzhongUnitaryEntry.do?buss_type=selfExamAppt&environment=wechat&unit_id=104";
+            callbackUrl = URLDecoder.decode(callbackUrl);
+            String[] strs = callbackUrl.split("unit_id=");
+            System.out.println(strs[1]);
         return false;
     }
 

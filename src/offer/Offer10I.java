@@ -12,7 +12,7 @@ package offer;
  */
 public class Offer10I {
     public static void main(String[] args) {
-        int n = 44;
+        int n = 5;
         System.out.println(new Offer10I().fib1(n));
     }
 
