@@ -39,6 +39,7 @@ public class T010 {
             sum[i] = sum[i - 1] + nums[i - 1];
         }
         Map<Integer, Integer> map = new HashMap<>();
+        //初始化，前缀和sum[0]的下标是1
         map.put(0, 1);
         for (int i = 1; i <= n; i++) {
             // 前缀和s=sum[i]，d 满足的值
