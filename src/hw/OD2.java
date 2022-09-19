@@ -18,10 +18,6 @@ public class OD2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println(calculate(sc.nextLine()));
-
-        //while (sc.hasNextLine()) {
-        //    System.out.println(calculate1(sc.nextLine()));
-        //}
     }
 
     public static int calculate(String str) {
