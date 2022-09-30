@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * @Author tangmf
  * @Date 2021/3/25 9:07 下午
- * @Description 82. 删除排序链表中的重复元素 II
+ * @Description 82. x删除排序链表中的重复元素 II
  * 存在一个按升序排列的链表，给你这个链表的头节点 head ，
  * 请你删除链表中所有存在数字重复情况的节点，只保留原始链表中没有重复出现的数字。
  * 返回同样按升序排列的结果链表。
@@ -114,7 +114,9 @@ public class T0325 {
                 tail = tail.next;
             }
             // 如果 head 与下一节点相同，跳过相同节点
-            while (head.next != null && head.val == head.next.val) head = head.next;
+            while (head.next != null && head.val == head.next.val) {
+                head = head.next;
+            }
             head = head.next;
         }
         tail.next = null;
